@@ -3,7 +3,7 @@ const axios = require("axios");
 const server = require("./src/server");
 const { conn } = require('./src/db.js');
 const { Country } = require('./src/db');
-const { API_PORT } = process.env || 3001;
+const API_PORT = process.env.API_PORT || 3001;
 
 
 conn.sync({ alter: true }).then(() => {
