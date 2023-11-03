@@ -3,14 +3,14 @@ const axios = require("axios");
 const server = require("./src/server");
 const { conn } = require('./src/db.js');
 const { Country } = require('./src/db');
-const API_PORT = process.env.API_PORT || 3002;
+const PORT = process.env.PORT || 3002;
 
 
 conn.sync({ alter: true }).then(() => {
   // llamamos a esta función solo en etapa de desarrollo para preparar nuestra la base de datos de esta app
   /* getAllCountries(); */
-  server.listen(API_PORT, () => {
-    console.log(`Server listening on port ${API_PORT}`);
+  server.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
   })
 }).catch(error => console.error(error))
 
